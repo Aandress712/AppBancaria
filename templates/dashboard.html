@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Bancaria K&A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 50px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .user-info {
+            font-size: 18px;
+        }
+        .logout-btn {
+            background-color: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .logout-btn:hover {
+            background-color: #cc0000;
+        }
+        .container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: black;
+        }
+        .btn {
+            display: block;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="user-info">Hola, <strong>{{ usuario.nombre }}</strong></div>
+        <a href="/salir" class="logout-btn">Cerrar sesión</a>
+    </div>
+    
+    <div class="container">
+        <h1>App Bancaria K & A</h1>
+        <a href="/registrar-cuenta" class="btn">Registrar Cuenta</a>
+        <a href="/transaccion" class="btn">Realizar Transacción</a>
+        <a href="/retiro" class="btn">Realizar Retiro</a>
+        <a href="/historial" class="btn">Historial de Transacciones</a>        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-login {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-register {
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form action="/iniciar-sesion" method="POST">
+            <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit" class="btn-login">Iniciar Sesión</button>
+        </form>
+        <form action="/registro-usuario">
+            <button type="submit" class="btn-register">Crear Usuario</button>
+        </form>
+    </div>
+
+</body>
+</html>
