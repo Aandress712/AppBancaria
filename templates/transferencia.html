@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Cuenta</title>
+    <title>Transferencia Bancaria</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -75,11 +75,11 @@
             outline: none;
         }
         input[type="number"] {
-            -moz-appearance: textfield; 
+            -moz-appearance: textfield;
         }
         input[type="number"]::-webkit-outer-spin-button,
         input[type="number"]::-webkit-inner-spin-button {
-            -webkit-appearance: none; 
+            -webkit-appearance: none;
             margin: 0;
         }
         button {
@@ -105,26 +105,34 @@
     </div>
 
     <div class="container">
-        <h1>Crear Cuenta</h1>
-        <form action="/crear_cuenta" method="POST">
+        <h1>Realizar Transferencia</h1>
+        <form action="/transferir" method="POST">
+
             <div>
-                <label for="numero_cuenta">Número de Cuenta:</label>
-                <input type="text" id="numero_cuenta" name="numero_cuenta" value="{{ numero_cuenta }}" readonly>
-            </div>
-            <div>
-                <label for="tipo_cuenta">Tipo de Cuenta:</label>
-                <select id="tipo_cuenta" name="tipo_cuenta" required>
-                    <option value="Ahorros">Ahorros</option>
-                    <option value="Corriente">Corriente</option>
+                <label for="cuenta_origen">Cuenta Origen:</label>
+                <select id="cuenta_origen" name="cuenta_origen" required>
+                    {% for cuenta in cuentas_origen %}
+                        <option value="{{ cuenta.numeroCuenta }}">{{ cuenta.numeroCuenta }}</option>
+                    {% endfor %}
                 </select>
-            </div>
-            <div>
-                <label for="saldo">Saldo:</label>
-                <input type="number" id="saldo" name="saldo" required>
             </div>
 
             <div>
-                <button type="submit">Crear Cuenta</button>
+                <label for="cuenta_destino">Cuenta Destino:</label>
+                <select id="cuenta_destino" name="cuenta_destino" required>
+                    {% for cuenta in cuentas_inscritas %}
+                        <option value="{{ cuenta.numeroCuenta }}">{{ cuenta.numeroCuenta }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="valor">Valor a transferir:</label>
+                <input type="number" id="valor" name="valor" step="0.01" required>
+            </div>
+
+            <div>
+                <button type="submit">Transferir</button>
             </div>
         </form>
     </div>
