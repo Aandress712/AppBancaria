@@ -180,9 +180,7 @@ def realizarTransferencia():
 
     return render_template('dashboard.html', usuario=inicioUsuario)
 
-@app.route('/salir')
-def salir():
-    return redirect('/ingresar')
+
 
 @app.route('/download')
 def descargar():
@@ -233,6 +231,9 @@ def transaccion():
 
 
     return render_template('transacciones.html', usuario=inicioUsuario, historial=listaTransacciones)
+@app.route('/salir')
 
+def salir():
+    return redirect('/ingresar')
 if __name__ == '__main__':
     app.run(debug=True)
